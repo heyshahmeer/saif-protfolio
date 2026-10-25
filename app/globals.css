@@ -2,6 +2,9 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@keyframes marquee { to { transform: translateX(-50%); } }
+.marquee-track { animation: marquee 45s linear infinite; }
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
