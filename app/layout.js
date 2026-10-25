@@ -10,7 +10,7 @@ export const metadata = { title: "Prof. Name", description: "Videos, notes and p
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`dark ${display.variable} ${sans.variable} ${mono.variable}`}>
-      <body className="font-sans">{children}</body>
+      <body className="font-sans" suppressHydrationWarning>{children}</body>
     </html>
   );
 }

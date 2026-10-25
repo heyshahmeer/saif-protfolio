@@ -1,7 +1,7 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse } from "next/server";
 
-export async function middleware(req) {
+export async function proxy(req) {
   let res = NextResponse.next({ request: req });
   const supabase = createServerClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY, {
     cookies: {
@@ -18,4 +18,5 @@ export async function middleware(req) {
     return NextResponse.redirect(new URL("/admin/login", req.url));
   return res;
 }
+
 export const config = { matcher: ["/admin/:path*"] };
