@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { submitApplication } from "@/lib/actions/apply";
 
 const field =
-  "w-full border border-white/20 bg-transparent px-4 py-3 text-paper outline-none placeholder:text-mute focus:border-signal [&>option]:bg-ink";
+  "w-full border border-foreground/20 bg-transparent px-4 py-3 text-paper outline-none placeholder:text-mute focus:border-signal [&>option]:bg-ink";
 const label = "mb-2 block font-mono text-[11px] uppercase tracking-[0.22em] text-mute";
 
 export function ApplyForm({ unis, selected = "" }) {

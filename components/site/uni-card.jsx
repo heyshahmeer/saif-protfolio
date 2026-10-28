@@ -4,7 +4,7 @@ import { logoFor } from "@/lib/utils";
 export function UniLogo({ u, size = 64 }) {
   const src = u.logo_url || logoFor(u.website);
   return src ? (
-    <img src={src} alt="" style={{ width: size, height: size }} className="shrink-0 bg-paper object-contain p-2" />
+    <img src={src} alt="" style={{ width: size, height: size }} className="shrink-0 bg-card object-contain p-2" />
   ) : (
     <div style={{ width: size, height: size }} className="grid shrink-0 place-items-center bg-card font-display text-3xl">
       {u.title?.[0]}

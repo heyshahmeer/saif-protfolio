@@ -20,7 +20,7 @@ export default async function PanelLayout({ children }) {
           <ul className="space-y-1">
             {nav.map(([l, h]) => (
               <li key={h}>
-                <Link href={h} className="block rounded px-3 py-2 text-sm text-mute transition-colors hover:bg-white/5 hover:text-paper">{l}</Link>
+                <Link href={h} className="block rounded px-3 py-2 text-sm text-mute transition-colors hover:bg-foreground/5 hover:text-paper">{l}</Link>
               </li>
             ))}
           </ul>

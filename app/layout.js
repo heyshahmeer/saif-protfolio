@@ -5,7 +5,7 @@ const display = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["n
 const sans = Geist({ subsets: ["latin"], variable: "--font-geist" });
 const mono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
 
-export const metadata = { title: "Prof. Name", description: "Videos, notes and projects." };
+export const metadata = { title: "Alsaif Academy", description: "Math shortcuts, entry-test guidance and academic coaching, including NUST NET." };
 
 export default function RootLayout({ children }) {
   return (

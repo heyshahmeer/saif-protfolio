@@ -3,7 +3,7 @@ import { ytThumb } from "@/lib/utils";
 
 function Placeholder({ label }) {
   return (
-    <div className="grid h-full w-full place-items-center bg-gradient-to-br from-[#1b1b1e] to-[#0e0e10] font-display text-8xl text-white/10">
+    <div className="grid h-full w-full place-items-center bg-gradient-to-br from-card to-secondary font-display text-8xl text-foreground/10">
       {label?.[0]}
     </div>
   );

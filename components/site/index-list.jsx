@@ -7,7 +7,7 @@ export function IndexList({ items }) {
         <li key={it.href} className="group border-b border-line">
           <Link
             href={it.href}
-            className="grid grid-cols-12 items-baseline gap-4 px-1 py-7 transition-all duration-500 hover:bg-white/[0.02] hover:pl-4"
+            className="grid grid-cols-12 items-baseline gap-4 px-1 py-7 transition-all duration-500 hover:bg-foreground/[0.03] hover:pl-4"
           >
             <span className="col-span-1 font-mono text-xs text-mute">{String(i + 1).padStart(2, "0")}</span>
             <span className="col-span-11 font-display text-3xl tracking-tight transition-colors group-hover:text-signal md:col-span-7 md:text-5xl">{it.title}</span>

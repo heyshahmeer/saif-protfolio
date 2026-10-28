@@ -80,7 +80,7 @@ export function ResourceForm({ title, fields, values = {}, action, id }) {
         <Field key={f.name} f={f} value={values[f.name]} />
       ))}
       {status?.error && <p className="break-words text-sm text-signal">Error: {status.error}</p>}
-      {status?.ok && <p className="text-sm text-green-400">Saved ✓</p>}
+      {status?.ok && <p className="text-sm text-signal">Saved ✓</p>}
       <button
         type="submit"
         disabled={pending || !ready}
