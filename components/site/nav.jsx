@@ -10,15 +10,13 @@ export function Nav({ name, logo }) {
         <nav className="flex items-center justify-between gap-4">
           <Link
             href="/"
-            className="flex items-center gap-3 border-2 border-foreground/15 bg-card/90 py-2 pl-2 pr-5 shadow-[4px_4px_0_0_rgb(26_34_51/0.08)] backdrop-blur transition-colors hover:border-signal/60"
+            className={`flex items-center gap-3 border-2 border-foreground/15 bg-card/90 py-2 pr-5 shadow-[4px_4px_0_0_rgb(26_34_51/0.08)] backdrop-blur transition-colors hover:border-signal/60 ${logo ? "pl-2" : "pl-5"}`}
           >
-            <span className="grid h-10 w-10 shrink-0 place-items-center overflow-hidden border border-line bg-secondary">
-              {logo ? (
+            {logo && (
+              <span className="grid h-10 w-10 shrink-0 place-items-center overflow-hidden border border-line bg-secondary">
                 <img src={logo} alt="" className="h-full w-full object-contain p-1" />
-              ) : (
-                <span className="font-display text-2xl leading-none text-signal">∫</span>
-              )}
-            </span>
+              </span>
+            )}
             <span className="font-display text-2xl leading-none tracking-tight">{name}</span>
           </Link>
 
