@@ -4,21 +4,25 @@ import { Marquee } from "@/components/site/marquee";
 import { Reveal } from "@/components/site/reveal";
 import { Gallery } from "@/components/site/gallery";
 import { SocialBand } from "@/components/site/social-band";
+import { Story } from "@/components/site/story";
 import { VideoCard, ProjectCard } from "@/components/site/cards";
 import { IndexList } from "@/components/site/index-list";
 import { getSettings, getPublished } from "@/lib/queries";
 import { ytId } from "@/lib/utils";
-import { Story } from "@/components/site/story";
 
 export const revalidate = 60;
 
-// Edit this copy here, or ask me to move it into the admin.
-const OFFERINGS = [
-  ["Math shortcuts", "Faster routes to the answer, built on the concept behind them, so they work on questions you have never seen."],
-  ["Entry-test guidance", "A clear plan for NUST NET: what to study first, how to pace the paper, and how to review mistakes."],
-  ["Concept-first problem solving", "Understand why a method works, then use it under time pressure without second-guessing."],
-  ["Academic coaching", "Straight guidance on the maths habits that turn practice into marks."],
+// Topics are straight from his YouTube About page. Edit the copy here.
+const TOPICS_ON_CHANNEL = [
+  ["Mathematics & Linear Algebra", "FSc and ICS maths chapter by chapter, plus matrices, determinants, echelon form and linear algebra, explained for real understanding."],
+  ["AI tools, technology & CS", "Useful AI tools, technology, computer science and programming, explained in a way you can apply."],
+  ["Admissions, scholarships & careers", "Entry tests, university admissions, scholarships and career direction in one place."],
+  ["Study tips & vlogs", "Study tips, study vlogs and general vlogs about student life."],
+  ["Foundation & informative videos", "Foundation lessons and informative videos that fill the gaps."],
+  ["Student information", "Practical information students need and rarely get, shared as it becomes useful."],
 ];
+
+const CHIPS = ["FSc maths chapter-wise", "ICS maths", "Matrices & determinants", "Echelon form", "Linear algebra", "Maths in Urdu", "Easy maths tricks", "Board exam preparation", "Algebra basics", "University maths"];
 
 const NET = [
   ["200", "MCQs in the paper"],
@@ -27,7 +31,7 @@ const NET = [
   ["0", "Negative marking"],
 ];
 
-const TOPICS = ["Algebra", "Trigonometry", "Calculus", "Analytical Geometry", "Probability", "Conic Sections", "Matrices", "Complex Numbers"];
+const NET_TOPICS = ["Algebra", "Trigonometry", "Calculus", "Analytical Geometry", "Probability", "Conic Sections", "Matrices", "Complex Numbers"];
 
 const FAQ = [
   ["Is there negative marking in NET?", "No. NUST states there is no negative marking, so attempt every question."],
@@ -69,31 +73,38 @@ export default async function Home() {
   return (
     <>
       <Hero name={s.name} eyebrow={s.tagline} headline={s.headline} sub={s.subline} stats={s.stats} portrait={s.portrait_url} socials={s.socials} />
-      <Marquee items={["Math shortcuts", "NUST NET", "Entry-test strategy", "Concept clarity", "Problem solving", "Speed & accuracy"]} />
+      <Marquee items={["Mathematics", "Linear Algebra", "AI Tools", "Programming", "Admissions", "Scholarships", "Study Tips"]} />
       <SocialBand socials={s.socials} />
-      <Story />
-      <Section eyebrow="What we teach" label="The method">
-        <div className="grid gap-px border border-line bg-line md:grid-cols-2">
-          {OFFERINGS.map(([t, d], i) => (
-            <Reveal key={t} delay={i * 0.06} className="bg-background">
-              <div className="h-full p-8 transition-colors duration-500 hover:bg-card md:p-12">
+
+      <Section eyebrow="On the channel" label="What you’ll learn">
+        <div className="grid gap-px border-2 border-foreground/15 bg-line md:grid-cols-2 lg:grid-cols-3">
+          {TOPICS_ON_CHANNEL.map(([t, d], i) => (
+            <Reveal key={t} delay={(i % 3) * 0.06} className="bg-card">
+              <div className="h-full p-8 transition-colors duration-500 hover:bg-secondary md:p-10">
                 <p className="font-mono text-[11px] tracking-[0.22em] text-signal">{String(i + 1).padStart(2, "0")}</p>
-                <h3 className="mt-10 font-display text-4xl tracking-tight md:text-5xl">{t}</h3>
-                <p className="mt-4 max-w-md text-paper/60">{d}</p>
+                <h3 className="mt-8 font-display text-3xl tracking-tight md:text-4xl">{t}</h3>
+                <p className="mt-3 text-paper/65">{d}</p>
               </div>
             </Reveal>
           ))}
         </div>
+        <Reveal className="mt-10 flex flex-wrap gap-2">
+          {CHIPS.map((c) => (
+            <span key={c} className="border border-line px-4 py-2 font-mono text-[11px] uppercase tracking-[0.18em] transition-colors hover:border-signal hover:text-signal">{c}</span>
+          ))}
+        </Reveal>
       </Section>
+
+      <Story />
 
       <section className="px-6 pb-28 md:px-12">
         <Reveal className="mb-14 max-w-3xl">
-          <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.28em] text-signal">NUST NET at a glance</p>
+          <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.28em] text-signal">Admissions guide · NUST NET at a glance</p>
           <h2 className="font-display text-5xl leading-[0.95] tracking-tight md:text-7xl">Know the paper before you sit it.</h2>
         </Reveal>
-        <dl className="grid grid-cols-2 gap-px border border-line bg-line md:grid-cols-4">
+        <dl className="grid grid-cols-2 gap-px border-2 border-foreground/15 bg-line md:grid-cols-4">
           {NET.map(([n, l]) => (
-            <div key={l} className="bg-background p-8 md:p-10">
+            <div key={l} className="bg-card p-8 md:p-10">
               <dd className="font-display text-7xl tracking-tight md:text-8xl">{n}</dd>
               <dt className="mt-3 font-mono text-[10px] uppercase tracking-[0.22em] text-mute">{l}</dt>
             </div>
@@ -102,7 +113,7 @@ export default async function Home() {
         <Reveal className="mt-14">
           <p className="mb-5 font-mono text-[11px] uppercase tracking-[0.28em] text-mute">Where the maths marks are</p>
           <div className="flex flex-wrap gap-2">
-            {TOPICS.map((t) => (
+            {NET_TOPICS.map((t) => (
               <span key={t} className="border border-line px-4 py-2 font-mono text-[11px] uppercase tracking-[0.18em] transition-colors hover:border-signal hover:text-signal">{t}</span>
             ))}
           </div>
@@ -118,13 +129,13 @@ export default async function Home() {
         <section className="px-6 pb-16 md:px-12">
           <Reveal className="grid gap-10 lg:grid-cols-12">
             <div className="flex flex-col justify-between gap-8 lg:col-span-4">
-              <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-signal">Latest lecture</p>
+              <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-signal">Featured lecture</p>
               <div>
                 <h2 className="font-display text-5xl leading-none tracking-tight">{featured.title}</h2>
                 {featured.description && <p className="mt-5 text-paper/60">{featured.description}</p>}
               </div>
             </div>
-            <div className="aspect-video overflow-hidden border border-line bg-black lg:col-span-8">
+            <div className="aspect-video overflow-hidden border-2 border-foreground/15 bg-black lg:col-span-8">
               <iframe
                 className="h-full w-full"
                 src={`https://www.youtube-nocookie.com/embed/${ytId(featured.youtube_url)}`}
@@ -210,7 +221,7 @@ export default async function Home() {
       </Section>
 
       <section className="px-6 pb-12 md:px-12">
-        <Reveal className="flex flex-wrap items-end justify-between gap-8 border border-line p-10 md:p-16">
+        <Reveal className="flex flex-wrap items-end justify-between gap-8 border-2 border-foreground/15 bg-card p-10 shadow-[12px_12px_0_0_rgb(31_93_76/0.12)] md:p-16">
           <div>
             <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.28em] text-signal">After the test</p>
             <h2 className="max-w-2xl font-display text-5xl leading-[0.95] tracking-tight md:text-7xl">Now pick the <em>university.</em></h2>

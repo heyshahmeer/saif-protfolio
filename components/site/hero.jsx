@@ -5,7 +5,8 @@ import { motion } from "motion/react";
 const ease = [0.16, 1, 0.3, 1];
 
 export function Hero({ name, eyebrow, headline, sub, stats = [], portrait, socials = {} }) {
-  const ig = socials?.instagram;
+  const main = socials?.youtube || socials?.instagram;
+  const mainLabel = socials?.youtube ? "Subscribe on YouTube ↗" : "Follow on Instagram ↗";
   return (
     <section className="px-6 pb-12 pt-40 md:px-12">
       <div className="grid min-h-[calc(100svh-12rem)] gap-10 lg:grid-cols-12">
@@ -28,8 +29,8 @@ export function Hero({ name, eyebrow, headline, sub, stats = [], portrait, socia
           <div className="flex flex-wrap items-end justify-between gap-8">
             <p className="max-w-md text-lg text-paper/70">{sub}</p>
             <div className="flex flex-wrap gap-3 font-mono text-[11px] uppercase tracking-[0.22em]">
-              {ig ? (
-                <a href={ig} target="_blank" rel="noreferrer" className="bg-signal px-6 py-4 text-ink transition-transform hover:-translate-y-0.5">Follow on Instagram ↗</a>
+              {main ? (
+                <a href={main} target="_blank" rel="noreferrer" className="bg-signal px-6 py-4 text-ink transition-transform hover:-translate-y-0.5">{mainLabel}</a>
               ) : (
                 <Link href="/videos" className="bg-signal px-6 py-4 text-ink transition-transform hover:-translate-y-0.5">Watch ▶</Link>
               )}

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SocialIcon, handleFor } from "./social-icon";
+import { SocialIcon, handleFor, labelFor } from "./social-icon";
 
 const explore = [["Videos", "/videos"], ["Notes", "/notes"], ["Universities", "/universities"], ["Updates", "/updates"], ["About", "/about"], ["Apply", "/apply"]];
 
@@ -33,7 +33,7 @@ export function Footer({ name, tagline, socials = {} }) {
               <li key={k}>
                 <a href={u} target="_blank" rel="noreferrer" className="group flex items-center gap-3 transition-colors hover:text-signal">
                   <SocialIcon name={k} />
-                  <span className="capitalize">{k}</span>
+                  <span>{labelFor(k)}</span>
                   <span className="font-mono text-[11px] tracking-[0.15em] text-mute">{handleFor(k, u)}</span>
                   <span className="ml-auto transition-transform group-hover:translate-x-1">↗</span>
                 </a>
@@ -45,7 +45,7 @@ export function Footer({ name, tagline, socials = {} }) {
 
       <div className="mt-16 flex flex-wrap items-center justify-between gap-4 border-t border-line pt-8 font-mono text-[11px] uppercase tracking-[0.22em] text-mute">
         <p>© {new Date().getFullYear()} {name}</p>
-        <p>Built for students</p>
+        <p>Pakistan · On YouTube since January 2026</p>
       </div>
     </footer>
   );

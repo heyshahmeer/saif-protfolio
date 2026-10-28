@@ -1,24 +1,24 @@
 import { Reveal } from "./reveal";
 
-// Written from the academy's description. Edit any line that doesn't match how he really teaches.
-const STEPS = [
-  ["Understand the idea", "Start from the concept in plain language, until the formula feels obvious instead of memorised."],
-  ["Learn the shortcut", "See the faster route and the reason it is valid, so you can trust it on test day."],
-  ["Drill under time", "Practise in timed blocks. NET leaves about 54 seconds a question, so pace is a skill you train."],
+// Mission and topics come from his YouTube About page. Edit any line to match his voice.
+const MISSION = [
+  ["Make maths easy", "FSc and university maths, from matrices and determinants to Linear Algebra, taught for understanding instead of memorising."],
+  ["Make technology useful", "AI tools, computer science and programming explained so students can actually use them."],
+  ["Make students future-ready", "Admissions, scholarships and career guidance, so choices about the next step are made with clear information."],
 ];
 
 const AUDIENCE = [
-  ["NUST NET aspirants", "Students aiming at NUST engineering and computing, where maths carries the most weight."],
-  ["FSc students", "Anyone who wants maths to stop feeling slow and start feeling clear."],
-  ["Retakers", "Students sitting another NET series who want a sharper plan and an honest look at their mistakes."],
+  ["FSc and ICS students", "Chapter-by-chapter maths that turns slow, stressful problems into familiar patterns."],
+  ["Admission and scholarship seekers", "Entry-test strategy, university choices and scholarship direction in one place."],
+  ["Curious about AI and tech", "Students who want to learn the tools and skills shaping the next few years."],
 ];
 
 const HABITS = [
-  ["Cover both years", "NET can draw on first-year and second-year concepts, sometimes inside one question. Skipping either is a gamble."],
-  ["Practise against the clock", "About 54 seconds a question leaves no room to wander. Time every practice set."],
-  ["High-return chapters first", "Conic sections, integration, matrices, trigonometry and calculus come up often. Make them solid early."],
+  ["Cover both years", "Entry tests can draw on first-year and second-year concepts, sometimes inside one question. Skipping either is a gamble."],
+  ["Practise against the clock", "Timed practice is a skill. Time every set, not just the final mock."],
+  ["High-return chapters first", "Conic sections, integration, matrices, trigonometry and calculus show up often. Make them solid early."],
   ["Use past papers late", "In the final weeks, solve past papers under test conditions and redo every question you missed."],
-  ["Keep a mistake log", "Write down why you missed each question: concept, speed or carelessness. Fix the pattern, not just the question."],
+  ["Keep a mistake log", "Write why you missed each question: concept, speed or carelessness. Fix the pattern, not just the question."],
 ];
 
 const eyebrow = "mb-4 font-mono text-[11px] uppercase tracking-[0.28em] text-signal";
@@ -28,32 +28,16 @@ export function Story() {
   return (
     <>
       <section className="px-6 py-28 md:px-12">
-        <div className="grid gap-12 lg:grid-cols-12">
-          <Reveal className="lg:col-span-5">
-            <p className={eyebrow}>Why this academy</p>
-            <h2 className="font-display text-5xl leading-[0.95] tracking-tight md:text-7xl">
-              Speed comes from <em className="text-signal">understanding.</em>
-            </h2>
-          </Reveal>
-          <Reveal delay={0.1} className="space-y-6 text-lg leading-relaxed text-paper/75 lg:col-span-6 lg:col-start-7">
-            <p>Most entry-test marks are lost in the same two places: not knowing a concept well enough to trust it, and not having a fast route to the answer. Alsaif Academy works on both.</p>
-            <p>Every shortcut here starts with the idea behind it. When you know why a trick works, you know when it stops working, and you stop second-guessing yourself under the clock.</p>
-            <p>The goal is not to memorise more. It is to see a question, recognise its pattern, and move.</p>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="px-6 pb-28 md:px-12">
         <Reveal className="mb-12">
-          <p className={eyebrow}>How it works</p>
-          <h2 className="font-display text-5xl tracking-tight md:text-7xl">Three steps, in order.</h2>
+          <p className={eyebrow}>Our mission</p>
+          <h2 className="font-display text-5xl tracking-tight md:text-7xl">Three promises.</h2>
         </Reveal>
         <div className="grid gap-5 md:grid-cols-3">
-          {STEPS.map(([t, d], i) => (
+          {MISSION.map(([t, d], i) => (
             <Reveal key={t} delay={i * 0.08}>
-              <div className={`${card} h-full`}>
+              <div className={`${card} h-full shadow-[8px_8px_0_0_rgb(31_93_76/0.10)]`}>
                 <p className="font-display text-7xl leading-none text-signal/70">{i + 1}</p>
-                <h3 className="mt-8 font-display text-3xl tracking-tight">{t}</h3>
+                <h3 className="mt-8 font-display text-3xl tracking-tight md:text-4xl">{t}</h3>
                 <p className="mt-3 text-paper/65">{d}</p>
               </div>
             </Reveal>
@@ -62,9 +46,25 @@ export function Story() {
       </section>
 
       <section className="px-6 pb-28 md:px-12">
+        <div className="grid gap-12 lg:grid-cols-12">
+          <Reveal className="lg:col-span-5">
+            <p className={eyebrow}>Why this academy</p>
+            <h2 className="font-display text-5xl leading-[0.95] tracking-tight md:text-7xl">
+              One place for the <em className="text-signal">whole journey.</em>
+            </h2>
+          </Reveal>
+          <Reveal delay={0.1} className="space-y-6 text-lg leading-relaxed text-paper/75 lg:col-span-6 lg:col-start-7">
+            <p>AL_Saif Academy started on YouTube in January 2026 and covers mathematics, AI, technology and student life in one place. Maths comes first: FSc and university topics, taught concept-first, so formulas stop being something to memorise.</p>
+            <p>Beyond maths, the channel covers AI tools, programming, admissions, scholarships and career guidance, because students need all of it and rarely get it from a single source.</p>
+            <p>Lectures are in Urdu, with study tips and vlogs that keep the experience human.</p>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="px-6 pb-28 md:px-12">
         <Reveal className="mb-12">
           <p className={eyebrow}>Who it’s for</p>
-          <h2 className="font-display text-5xl tracking-tight md:text-7xl">Built for students on a clock.</h2>
+          <h2 className="font-display text-5xl tracking-tight md:text-7xl">Built for students.</h2>
         </Reveal>
         <div className="grid gap-5 md:grid-cols-3">
           {AUDIENCE.map(([t, d], i) => (
@@ -82,8 +82,8 @@ export function Story() {
         <div className="grid gap-12 lg:grid-cols-12">
           <Reveal className="lg:col-span-4">
             <p className={eyebrow}>Study playbook</p>
-            <h2 className="font-display text-5xl leading-[0.95] tracking-tight md:text-6xl">Five habits for NET maths.</h2>
-            <p className="mt-6 text-paper/65">Simple, repeatable, and the same advice whoever you study with.</p>
+            <h2 className="font-display text-5xl leading-[0.95] tracking-tight md:text-6xl">Five habits for entry-test maths.</h2>
+            <p className="mt-6 text-paper/65">Simple, repeatable, and good advice whoever you study with.</p>
           </Reveal>
           <ol className="border-t border-line lg:col-span-8">
             {HABITS.map(([t, d], i) => (
@@ -104,8 +104,8 @@ export function Story() {
       <section className="px-6 pb-28 md:px-12">
         <Reveal className="border-2 border-foreground/15 bg-card p-10 text-center shadow-[12px_12px_0_0_rgb(31_93_76/0.12)] md:p-20">
           <p className="font-display text-5xl leading-[1] tracking-tight md:text-8xl">
-            Don’t memorise more.<br />
-            <em className="text-signal">Recognise faster.</em>
+            Subscribe. Follow.<br />
+            <em className="text-signal">Learn. Explore.</em>
           </p>
         </Reveal>
       </section>

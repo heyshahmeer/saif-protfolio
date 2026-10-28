@@ -5,7 +5,7 @@ const display = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["n
 const sans = Geist({ subsets: ["latin"], variable: "--font-geist" });
 const mono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
 
-export const metadata = { title: "Alsaif Academy", description: "Math shortcuts, entry-test guidance and academic coaching, including NUST NET." };
+export const metadata = { title: "AL_Saif Academy · Maths, AI & Technology", description: "Educational platform for Mathematics, AI, technology, admissions and student life. Make maths easy. Make technology useful." };
 
 export default function RootLayout({ children }) {
   return (
@@ -14,3 +14,4 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
