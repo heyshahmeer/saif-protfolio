@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const links = [["Videos", "/videos"], ["Projects", "/projects"], ["Notes", "/notes"], ["Updates", "/updates"], ["About", "/about"]];
+const links = [["Videos", "/videos"], ["Projects", "/projects"], ["Notes", "/notes"], ["Universities", "/universities"], ["Updates", "/updates"], ["About", "/about"]];
 
 export function Nav({ name }) {
   return (

@@ -26,7 +26,16 @@ function Field({ f, value }) {
     case "rich": control = <RichEditor name={f.name} defaultValue={value ?? ""} />; break;
     case "image": control = <FileUpload name={f.name} folder={f.folder ?? "images"} accept="image/*" defaultValue={value ?? ""} />; break;
     case "file": control = <FileUpload name={f.name} folder={f.folder ?? "files"} accept={f.accept} defaultValue={value ?? ""} />; break;
-    case "number": control = <Input {...base} type="number" defaultValue={value ?? 0} />; break;
+    case "number": control = <Input {...base} type="number" defaultValue={value ?? (f.nullable ? "" : 0)} />; break;
+    case "select":
+      control = (
+        <select name={f.name} required={f.required} defaultValue={value ?? ""}
+          className="h-9 w-full rounded-md border border-input bg-transparent px-3 text-sm outline-none focus:border-ring">
+          <option value="" className="bg-card">Select…</option>
+          {f.options.map((o) => <option key={o} value={o} className="bg-card">{o}</option>)}
+        </select>
+      );
+      break;
     case "tags": control = <Input {...base} defaultValue={(value ?? []).join(", ")} placeholder="AI, Python, Systems" />; break;
     case "stats": control = <Textarea {...base} rows={4} defaultValue={toLines(value)} placeholder="Subscribers: 120K" />; break;
     case "socials": control = <Textarea {...base} rows={4} defaultValue={socialsToLines(value)} placeholder="youtube: https://youtube.com/@channel" />; break;

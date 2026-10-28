@@ -5,7 +5,8 @@ import { createClient } from "@/lib/supabase/server";
 import { signOut } from "@/lib/actions/auth";
 
 const nav = [["Overview", "/admin"], ["Videos", "/admin/videos"], ["Projects", "/admin/projects"],
-  ["Notes", "/admin/notes"], ["Updates", "/admin/updates"], ["Settings", "/admin/settings"]];
+["Notes", "/admin/notes"], ["Universities", "/admin/universities"], ["Applications", "/admin/applications"],
+["Updates", "/admin/updates"], ["Settings", "/admin/settings"]];
 
 export default async function PanelLayout({ children }) {
   const supabase = await createClient();
