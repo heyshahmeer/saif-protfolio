@@ -9,7 +9,6 @@ import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 
 const toLines = (v) => (v ?? []).map((s) => `${s.label}: ${s.value}`).join("\n");
-const socialsToLines = (v) => Object.entries(v ?? {}).map(([k, u]) => `${k}: ${u}`).join("\n");
 
 function Field({ f, value }) {
   const base = { name: f.name, required: f.required };
@@ -40,7 +39,6 @@ function Field({ f, value }) {
       break;
     case "tags": control = <Input {...base} defaultValue={(value ?? []).join(", ")} placeholder="Maths, FSc, Linear Algebra" />; break;
     case "stats": control = <Textarea {...base} rows={4} defaultValue={toLines(value)} placeholder="Subscribers: 398" />; break;
-    case "socials": control = <Textarea {...base} rows={6} defaultValue={socialsToLines(value)} placeholder="youtube: https://youtube.com/@al_saifacademy" />; break;
     default: control = <Input {...base} type={f.type === "url" ? "url" : "text"} defaultValue={value ?? ""} />;
   }
   return (

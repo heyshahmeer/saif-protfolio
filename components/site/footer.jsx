@@ -1,10 +1,11 @@
 import Link from "next/link";
+import { SOCIALS } from "@/lib/socials";
 import { SocialIcon, handleFor, labelFor } from "./social-icon";
 
 const explore = [["Home", "/"], ["Videos", "/videos"], ["Notes", "/notes"], ["Universities", "/universities"], ["About", "/about"], ["Apply", "/apply"]];
 
-export function Footer({ name, tagline, socials = {} }) {
-  const entries = Object.entries(socials).filter(([, u]) => u);
+export function Footer({ name, tagline }) {
+  const entries = Object.entries(SOCIALS);
   return (
     <footer className="mt-20 border-t border-line px-6 pb-10 pt-24 md:px-12">
       <p className="font-display text-[clamp(3rem,13vw,13rem)] leading-[0.85] tracking-[-0.04em]">

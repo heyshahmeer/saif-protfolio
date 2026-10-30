@@ -11,7 +11,7 @@ export default async function SiteLayout({ children }) {
       <ScrollProgress />
       <Nav name={s.name} logo={s.logo_url} />
       <main>{children}</main>
-      <Footer name={s.name} tagline={s.tagline} socials={s.socials} />
+      <Footer name={s.name} tagline={s.tagline} />
     </SmoothScroll>
   );
 }

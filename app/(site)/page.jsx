@@ -11,6 +11,7 @@ import { CtaBand } from "@/components/site/cta-band";
 import { VideoCard, ProjectCard } from "@/components/site/cards";
 import { UniCard } from "@/components/site/uni-card";
 import { IndexList } from "@/components/site/index-list";
+import { SocialLinks } from "@/components/site/social-links";
 import { getSettings, getPublished } from "@/lib/queries";
 import { ytId, ytThumb } from "@/lib/utils";
 
@@ -47,7 +48,8 @@ export default async function Home() {
 
   return (
     <>
-      <Hero name={s.name} eyebrow={s.tagline} headline={s.headline} sub={s.subline} stats={s.stats} socials={s.socials} />
+      <Hero name={s.name} eyebrow={s.tagline} headline={s.headline} sub={s.subline} stats={s.stats} />
+      <SocialLinks />
       <Marquee items={["Mathematics", "Linear Algebra", "AI Tools", "Programming", "Admissions", "Scholarships", "Study Tips"]} />
 
       <section className="px-6 py-28 md:px-12">

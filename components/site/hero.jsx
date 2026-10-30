@@ -4,8 +4,8 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { animate, motion, useInView } from "motion/react";
-import { SocialIcon, labelFor } from "./social-icon";
 import { Magnetic } from "./magnetic";
+import { SOCIALS } from "@/lib/socials";
 
 const ease = [0.16, 1, 0.3, 1];
 
@@ -45,15 +45,8 @@ export function Hero({
   headline,
   sub,
   stats = [],
-  socials = {},
 }) {
-  const yt = socials?.youtube;
-  const main = yt || socials?.instagram;
-  const mainLabel = yt
-    ? "Subscribe on YouTube ↗"
-    : "Follow on Instagram ↗";
-
-  const links = Object.entries(socials ?? {}).filter(([, url]) => url);
+  const main = SOCIALS.youtube;
   const first = stats[0];
   const sentences = headline.split(/(?<=\.)\s+/);
   let wordIndex = 0;
@@ -157,7 +150,7 @@ export function Hero({
                     rel="noreferrer"
                     className="group relative block overflow-hidden rounded-full bg-signal px-7 py-4 text-ink transition-transform duration-300 hover:-translate-y-1"
                   >
-                    <span className="relative z-10">{mainLabel}</span>
+                    <span className="relative z-10">Subscribe on YouTube ↗</span>
                     <span className="absolute inset-0 -translate-x-full bg-white/25 transition-transform duration-700 group-hover:translate-x-full" />
                   </a>
                 ) : (
@@ -188,23 +181,6 @@ export function Hero({
               </Link>
             </div>
 
-            {/* SOCIAL LINKS */}
-            {links.length > 0 && (
-              <div className="flex flex-wrap gap-2">
-                {links.map(([key]) => (
-                  <a
-                    key={key}
-                    href={socials[key]}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={labelFor(key)}
-                    className="grid h-11 w-11 place-items-center rounded-full border border-border transition-all duration-300 hover:-translate-y-1 hover:border-signal hover:bg-signal hover:text-ink"
-                  >
-                    <SocialIcon name={key} />
-                  </a>
-                ))}
-              </div>
-            )}
           </motion.div>
         </div>
 

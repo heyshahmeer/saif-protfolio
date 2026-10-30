@@ -3,6 +3,7 @@ import { Reveal } from "@/components/site/reveal";
 import { Topics } from "@/components/site/topics";
 import { ScrollGallery } from "@/components/site/scroll-gallery";
 import { SocialIcon, handleFor, labelFor } from "@/components/site/social-icon";
+import { SOCIALS } from "@/lib/socials";
 import { getSettings } from "@/lib/queries";
 
 export const revalidate = 60;
@@ -31,7 +32,7 @@ export default async function About() {
   const s = await getSettings();
   const gallery = Array.isArray(s.gallery) ? s.gallery.filter(Boolean) : [];
   const stats = Array.isArray(s.stats) ? s.stats : [];
-  const socials = Object.entries(s.socials ?? {}).filter(([, u]) => u);
+  const socials = Object.entries(SOCIALS);
   const initials = (s.name ?? "").split(/[\s_]+/).slice(0, 2).map((w) => w[0]).join("").toUpperCase();
 
   return (
