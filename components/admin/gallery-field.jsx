@@ -3,7 +3,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { createClient } from "@/lib/supabase/client";
 
-export function GalleryField({ name, defaultValue = [], max = 5, folder = "gallery" }) {
+export function GalleryField({ name, defaultValue = [], max = 12, folder = "gallery" }) {
   const [urls, setUrls] = useState(Array.isArray(defaultValue) ? defaultValue : []);
   const [busy, setBusy] = useState(false);
 

@@ -2,8 +2,7 @@ import Link from "next/link";
 import { MobileMenu } from "./mobile-menu";
 import { NavLinks } from "./nav-links";
 
-const links = [["Home", "/"], ["Videos", "/videos"], ["Notes", "/notes"], ["Universities", "/universities"], ["About", "/about"]];
-
+const links = [["Home", "/"], ["Videos", "/videos"], ["Notes", "/notes"], ["Projects", "/projects"], ["Updates", "/updates"], ["Universities", "/universities"], ["About", "/about"]];
 export function Nav({ name, logo }) {
   return (
     <>
