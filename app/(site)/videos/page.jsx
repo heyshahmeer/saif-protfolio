@@ -11,7 +11,7 @@ export default async function Videos() {
       <div className="grid gap-x-6 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
         {videos.map((v) => (
           <a key={v.id} href={v.youtube_url} target="_blank" className="group block">
-            <div className="aspect-video overflow-hidden border border-line bg-card">
+            <div className="aspect-video overflow-hidden rounded-2xl border border-border bg-card">
               <img src={v.thumbnail_url || ytThumb(v.youtube_url)} alt={v.title}
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
             </div>

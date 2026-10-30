@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 
 const field =
-  "w-full border border-foreground/20 bg-transparent px-4 py-3 text-paper outline-none placeholder:text-mute focus:border-signal";
+  "w-full rounded-xl border border-border bg-card px-4 py-3 text-paper outline-none placeholder:text-mute focus:border-signal";
 
 export default function Login() {
   const [msg, setMsg] = useState("");
@@ -56,7 +56,7 @@ export default function Login() {
         <button
           type="submit"
           disabled={busy || !ready}
-          className="w-full bg-signal px-4 py-3 font-mono text-xs uppercase tracking-[0.22em] text-ink disabled:opacity-50"
+          className="w-full rounded-full bg-signal px-4 py-3 font-mono text-xs uppercase tracking-[0.22em] text-ink disabled:opacity-50"
         >
           {!ready ? "Loading…" : busy ? "Please wait" : "Enter"}
         </button>

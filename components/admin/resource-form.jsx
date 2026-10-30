@@ -85,7 +85,7 @@ export function ResourceForm({ title, fields, values = {}, action, id }) {
       <button
         type="submit"
         disabled={pending || !ready}
-        className="bg-signal px-8 py-3 font-mono text-xs uppercase tracking-[0.22em] text-ink disabled:opacity-50"
+        className="rounded-full bg-signal px-8 py-3 font-mono text-xs uppercase tracking-[0.22em] text-ink disabled:opacity-50"
       >
         {!ready ? "Loading…" : pending ? "Saving…" : "Save"}
       </button>

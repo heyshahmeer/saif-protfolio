@@ -14,7 +14,7 @@ export function UniLogo({ u, size = 64 }) {
 
 export function UniCard({ u }) {
   return (
-    <article className="group flex flex-col border border-line bg-card/40 p-6 transition-colors duration-500 hover:border-signal/60">
+    <article className="group flex flex-col rounded-2xl border border-border bg-card/40 p-6 transition-colors duration-500 hover:border-signal/60">
       <div className="flex items-start gap-4">
         <UniLogo u={u} />
         <div className="min-w-0">
@@ -24,19 +24,19 @@ export function UniCard({ u }) {
       </div>
 
       <div className="mt-5 flex flex-wrap gap-2 font-mono text-[10px] uppercase tracking-[0.18em]">
-        <span className="border border-line px-2 py-1">{u.type}</span>
-        {u.founded > 0 && <span className="border border-line px-2 py-1 text-mute">Est. {u.founded}</span>}
+        <span className="rounded-full border border-border px-2 py-1">{u.type}</span>
+        {u.founded > 0 && <span className="rounded-full border border-border px-2 py-1 text-mute">Est. {u.founded}</span>}
         {u.accepting && <span className="border border-signal/50 px-2 py-1 text-signal">Admissions open</span>}
       </div>
 
-      {u.summary && <p className="mt-4 line-clamp-2 text-sm text-paper/60">{u.summary}</p>}
+      {u.summary && <p className="mt-4 line-clamp-2 text-sm text-paper/80">{u.summary}</p>}
       <div className="mt-4 flex flex-wrap gap-x-3 gap-y-1 text-xs text-mute">
         {(u.programs ?? []).slice(0, 3).map((p) => <span key={p}>#{p}</span>)}
       </div>
 
       <div className="mt-auto flex gap-3 pt-6 font-mono text-[11px] uppercase tracking-[0.2em]">
-        <Link href={`/universities/${u.slug}`} className="flex-1 border border-line px-4 py-3 text-center transition-colors hover:border-paper">Details</Link>
-        <Link href={`/apply?uni=${u.slug}`} className="flex-1 bg-signal px-4 py-3 text-center text-ink transition-transform hover:-translate-y-0.5">Apply</Link>
+        <Link href={`/universities/${u.slug}`} className="flex-1 rounded-full border border-border px-4 py-3 text-center transition-colors hover:border-paper">Details</Link>
+        <Link href={`/apply?uni=${u.slug}`} className="flex-1 rounded-full bg-signal px-4 py-3 text-center text-ink transition-transform hover:-translate-y-0.5">Apply</Link>
       </div>
     </article>
   );

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { submitApplication } from "@/lib/actions/apply";
 
 const field =
-  "w-full border border-foreground/20 bg-transparent px-4 py-3 text-paper outline-none placeholder:text-mute focus:border-signal [&>option]:bg-ink";
+  "w-full rounded-xl border border-border bg-card px-4 py-3 text-paper outline-none placeholder:text-mute focus:border-signal [&>option]:bg-ink";
 const label = "mb-2 block font-mono text-[11px] uppercase tracking-[0.22em] text-mute";
 
 export function ApplyForm({ unis, selected = "" }) {
@@ -32,7 +32,7 @@ export function ApplyForm({ unis, selected = "" }) {
     return (
       <div className="max-w-xl border border-signal/50 p-10">
         <p className="font-display text-5xl tracking-tight">Application received.</p>
-        <p className="mt-4 text-paper/70">We have your details and will contact you on the email or phone number you gave.</p>
+        <p className="mt-4 text-paper/80">We have your details and will contact you on the email or phone number you gave.</p>
       </div>
     );
 
@@ -69,7 +69,7 @@ export function ApplyForm({ unis, selected = "" }) {
       {status?.error && <p className="text-sm text-signal md:col-span-2">{status.error}</p>}
       <button
         type="submit" disabled={pending || !ready}
-        className="bg-signal px-8 py-4 font-mono text-xs uppercase tracking-[0.22em] text-ink disabled:opacity-50 md:col-span-2"
+        className="rounded-full bg-signal px-8 py-4 font-mono text-xs uppercase tracking-[0.22em] text-ink disabled:opacity-50 md:col-span-2"
       >
         {!ready ? "Loading…" : pending ? "Sending…" : "Submit application"}
       </button>

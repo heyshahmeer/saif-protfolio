@@ -18,7 +18,7 @@ export default async function Applications() {
       {!apps?.length && <p className="mt-8 text-mute">No applications yet.</p>}
       <ul className="mt-10 space-y-4">
         {apps?.map((a) => (
-          <li key={a.id} className="border border-line p-6">
+          <li key={a.id} className="rounded-2xl border border-border p-6">
             <div className="flex flex-wrap items-start justify-between gap-4">
               <div>
                 <h2 className="font-display text-3xl tracking-tight">{a.full_name}</h2>
@@ -42,7 +42,7 @@ export default async function Applications() {
               <div><dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-mute">Qualification</dt><dd>{[a.qualification, a.marks].filter(Boolean).join(" · ") || "—"}</dd></div>
             </dl>
 
-            {a.message && <p className="mt-5 whitespace-pre-line border-t border-line pt-4 text-paper/70">{a.message}</p>}
+            {a.message && <p className="mt-5 whitespace-pre-line border-t border-line pt-4 text-paper/80">{a.message}</p>}
             <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.2em] text-mute">
               {new Date(a.created_at).toLocaleString("en", { dateStyle: "medium", timeStyle: "short" })}
             </p>

@@ -6,7 +6,7 @@ function Chip({ on, children, ...p }) {
   return (
     <button
       type="button" {...p}
-      className={`border px-4 py-2 font-mono text-[11px] uppercase tracking-[0.18em] transition-colors ${
+      className={`rounded-full border px-4 py-2 font-mono text-[11px] uppercase tracking-[0.18em] transition-colors ${
         on ? "border-signal bg-signal text-ink" : "border-line text-mute hover:text-paper"
       }`}
     >
@@ -52,7 +52,7 @@ export function UniExplorer({ unis }) {
         {["All", "Public", "Private"].map((t) => <Chip key={t} on={type === t} onClick={() => setType(t)}>{t}</Chip>)}
         <select
           value={program} onChange={(e) => setProgram(e.target.value)}
-          className="ml-auto border border-line bg-transparent px-4 py-2 font-mono text-[11px] uppercase tracking-[0.18em] outline-none focus:border-signal [&>option]:bg-ink"
+          className="ml-auto rounded-2xl border border-border bg-transparent px-4 py-2 font-mono text-[11px] uppercase tracking-[0.18em] outline-none focus:border-signal [&>option]:bg-ink"
         >
           {programs.map((p) => <option key={p} value={p}>{p === "All" ? "All programs" : p}</option>)}
         </select>

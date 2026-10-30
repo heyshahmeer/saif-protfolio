@@ -15,7 +15,7 @@ export default async function Note({ params }) {
       {n.file_url && (
         <a
           href={n.file_url} target="_blank"
-          className="mt-8 inline-block border border-line px-5 py-3 font-mono text-[11px] uppercase tracking-[0.22em] hover:border-signal hover:text-signal"
+          className="mt-8 inline-block rounded-full border border-border px-5 py-3 font-mono text-[11px] uppercase tracking-[0.22em] hover:border-signal hover:text-signal"
         >
           Download PDF ↓
         </a>

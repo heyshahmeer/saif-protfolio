@@ -11,7 +11,7 @@ export default async function Universities() {
       <h1 className="font-display text-[clamp(3.5rem,10vw,9rem)] leading-[0.9] tracking-[-0.035em]">
         Find your <em>university.</em>
       </h1>
-      <p className="mb-16 mt-8 max-w-xl text-lg text-paper/70">
+      <p className="mb-16 mt-8 max-w-xl text-lg text-paper/80">
         Browse universities across Pakistan, compare them, and send your application details to us in one place.
       </p>
       <UniExplorer unis={unis} />

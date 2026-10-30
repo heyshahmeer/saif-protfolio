@@ -27,7 +27,7 @@ export function RichEditor({ name, defaultValue = "" }) {
   if (!editor) return null;
 
   return (
-    <div className="rounded border border-line">
+    <div className="rounded rounded-2xl border border-border">
       <input type="hidden" name={name} value={html} />
       <div className="flex flex-wrap gap-1 border-b border-line p-2">
         <Btn label="B" active={editor.isActive("bold")} on={() => editor.chain().focus().toggleBold().run()} />

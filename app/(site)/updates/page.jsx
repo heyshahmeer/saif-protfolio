@@ -16,7 +16,7 @@ export default async function Updates() {
             </time>
             <div className="md:col-span-9">
               <h2 className="font-display text-4xl tracking-tight">{u.title}</h2>
-              <p className="mt-3 max-w-xl text-paper/70">{u.body}</p>
+              <p className="mt-3 max-w-xl text-paper/80">{u.body}</p>
             </div>
           </li>
         ))}

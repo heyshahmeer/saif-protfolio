@@ -32,9 +32,9 @@ export default async function University({ params }) {
           <p className="mt-8 font-mono text-[11px] uppercase tracking-[0.28em] text-signal">{u.city} · {u.province}</p>
           <h1 className="mt-4 max-w-4xl font-display text-5xl leading-[0.95] tracking-[-0.03em] md:text-8xl">{u.title}</h1>
           <div className="mt-10 flex flex-wrap gap-3 font-mono text-[11px] uppercase tracking-[0.22em]">
-            <Link href={`/apply?uni=${u.slug}`} className="bg-signal px-6 py-4 text-ink transition-transform hover:-translate-y-0.5">Apply through us</Link>
-            {u.website && <a href={u.website} target="_blank" rel="noreferrer" className="border border-line px-6 py-4 hover:border-signal hover:text-signal">Official site ↗</a>}
-            {u.admission_url && <a href={u.admission_url} target="_blank" rel="noreferrer" className="border border-line px-6 py-4 hover:border-signal hover:text-signal">Admissions page ↗</a>}
+            <Link href={`/apply?uni=${u.slug}`} className="rounded-full bg-signal px-6 py-4 text-ink transition-transform hover:-translate-y-0.5">Apply through us</Link>
+            {u.website && <a href={u.website} target="_blank" rel="noreferrer" className="rounded-full border border-border px-6 py-4 hover:border-signal hover:text-signal">Official site ↗</a>}
+            {u.admission_url && <a href={u.admission_url} target="_blank" rel="noreferrer" className="rounded-full border border-border px-6 py-4 hover:border-signal hover:text-signal">Admissions page ↗</a>}
           </div>
         </div>
       </header>
@@ -55,7 +55,7 @@ export default async function University({ params }) {
           {u.programs?.length > 0 && (
             <div className="mt-10 flex flex-wrap gap-2">
               {u.programs.map((p) => (
-                <span key={p} className="border border-line px-3 py-2 font-mono text-[11px] uppercase tracking-[0.18em] text-paper/80">{p}</span>
+                <span key={p} className="rounded-full border border-border px-3 py-2 font-mono text-[11px] uppercase tracking-[0.18em] text-paper/80">{p}</span>
               ))}
             </div>
           )}
@@ -65,7 +65,7 @@ export default async function University({ params }) {
           {u.scholarships && (
             <section className="mt-12 border-t border-line pt-8">
               <h2 className="font-display text-4xl tracking-tight">Scholarships</h2>
-              <p className="mt-4 whitespace-pre-line text-paper/70">{u.scholarships}</p>
+              <p className="mt-4 whitespace-pre-line text-paper/80">{u.scholarships}</p>
             </section>
           )}
 
@@ -75,10 +75,10 @@ export default async function University({ params }) {
         </div>
 
         <aside className="lg:col-span-4">
-          <div className="sticky top-28 space-y-6 border border-line p-6">
+          <div className="sticky top-28 space-y-6 rounded-2xl border border-border p-6">
             <h2 className="font-display text-3xl tracking-tight">Ready to apply?</h2>
-            <p className="text-sm text-paper/60">Send your details and we will guide you through the admission process.</p>
-            <Link href={`/apply?uni=${u.slug}`} className="block bg-signal px-6 py-4 text-center font-mono text-[11px] uppercase tracking-[0.22em] text-ink">
+            <p className="text-sm text-paper/80">Send your details and we will guide you through the admission process.</p>
+            <Link href={`/apply?uni=${u.slug}`} className="block rounded-full bg-signal px-6 py-4 text-center font-mono text-[11px] uppercase tracking-[0.22em] text-ink">
               Start application
             </Link>
             {(u.address || u.phone || u.email) && (

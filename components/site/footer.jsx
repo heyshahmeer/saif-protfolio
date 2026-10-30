@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { SocialIcon, handleFor, labelFor } from "./social-icon";
 
-const explore = [["Videos", "/videos"], ["Notes", "/notes"], ["Universities", "/universities"], ["Updates", "/updates"], ["About", "/about"], ["Apply", "/apply"]];
+const explore = [["Home", "/"], ["Videos", "/videos"], ["Notes", "/notes"], ["Universities", "/universities"], ["About", "/about"], ["Apply", "/apply"]];
 
 export function Footer({ name, tagline, socials = {} }) {
   const entries = Object.entries(socials).filter(([, u]) => u);
@@ -14,7 +14,7 @@ export function Footer({ name, tagline, socials = {} }) {
       <div className="mt-20 grid gap-12 border-t border-line pt-12 md:grid-cols-12">
         <div className="md:col-span-5">
           <p className="font-display text-4xl tracking-tight">{name}</p>
-          {tagline && <p className="mt-3 max-w-sm text-paper/60">{tagline}</p>}
+          {tagline && <p className="mt-3 max-w-sm text-paper/80">{tagline}</p>}
         </div>
 
         <nav className="md:col-span-3">

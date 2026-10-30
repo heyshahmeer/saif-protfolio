@@ -39,7 +39,7 @@ export function GalleryField({ name, defaultValue = [], max = 5, folder = "galle
       <input type="hidden" name={name} value={JSON.stringify(urls)} />
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
         {urls.map((u, i) => (
-          <div key={u} className="relative aspect-square overflow-hidden border border-line bg-secondary">
+          <div key={u} className="relative aspect-square overflow-hidden rounded-2xl border border-border bg-secondary">
             <img src={u} alt="" className="h-full w-full object-cover" />
             <span className="absolute left-2 top-2 bg-black/60 px-2 py-0.5 font-mono text-[10px] text-white">{i + 1}</span>
             <div className="absolute inset-x-0 bottom-0 flex justify-between bg-black/60 px-2 py-1 text-xs text-white">
